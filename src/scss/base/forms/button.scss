@@ -1,0 +1,30 @@
+//<BUTTONS (a.btn+tab)>
+// Снипет (HTML): btn
+
+.button {
+	display: inline-flex;
+	font-family: Playfair Display;
+	font-weight: 700;
+	font-size: rem(20);
+	color: #fff;
+	background-color: $button;
+
+	span {
+		position: relative;
+		z-index: 100;
+	}
+
+	@media (any-hover: hover) {
+		&:hover {
+			cursor: url('@img/cursor.png'), auto;
+		}
+	}
+	&._fw {
+		width: 100%;
+	}
+
+	@media (max-width:$mobile){
+		font-size: rem(15);
+	}
+
+}

@@ -1,0 +1,342 @@
+//====================================================================================================
+
+.preview {
+	background: linear-gradient(to bottom, #3B322D 55%, #251D1A 45%);
+
+		&__container {
+		}
+
+		&__body {
+			padding: rem(120) rem(130) rem(125);
+			display: flex;
+			flex-direction: column;
+
+			@media (max-width:$tablet){
+				padding: rem(80) 0 rem(20);
+			}
+		}
+
+		&__image {
+			background: url('@img/main/bg.webp') center / cover no-repeat;
+			padding: rem(40) rem(60) rem(60);
+			margin-bottom: rem(100);
+			@include adaptiveValue("min-height", 1000, 500);
+
+			@media (max-width:$mobile){
+				padding-left: rem(10);
+				padding-right: rem(10);
+				margin-bottom: rem(50);
+			}
+		}
+
+		&__items {
+		}
+}
+.image {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+
+	@media (max-width:$mobile){
+		text-align: center;
+		align-items: center;
+	}
+
+		&__content {
+			display: flex;
+			align-items: end;
+			gap: rem(10);
+
+			@media (max-width:$tablet){
+				flex-wrap: wrap;
+			}
+
+			@media (max-width:$mobile){
+				flex-direction: column;
+				align-items: center;
+			}
+		}
+
+		&__left {
+			max-width: rem(671);
+		}
+
+		&__title {
+			font-family: Playfair Display;
+			font-weight: 900;
+			@include adaptiveValue("font-size", 70, 30);
+			line-height: math.div(77, 70);
+			color: #fff;
+
+			@media (max-width:$tablet){
+				margin-bottom: rem(35);
+			}
+		}
+
+		&__right {
+			display: flex;
+			flex-direction: column;
+
+			@media (max-width:$mobile){
+				align-items: center;
+			}
+		}
+
+		&__rate {
+			max-width: 221px;
+			font-family: Playfair Display;
+			font-weight: 700;
+			font-size: rem(14);
+			color: #fff;
+			letter-spacing: 0.1em;
+			border: 1px solid #EFE7E2;
+			padding: rem(10) 0;
+			text-align: center;
+			margin-bottom: rem(29);
+
+			@media (max-width:$mobile){
+				margin-bottom: rem(15);
+			}
+		}
+
+		&__text {
+			font-size: rem(18);
+			line-height: math.div(27, 18);
+		}
+
+		&__button {
+			position: absolute;
+			padding: rem(18.5) rem(51);
+			bottom: 5%;
+			width: rem(194);
+
+			@media (max-width:$mobile){
+				justify-content: center;
+				padding: rem(10) rem(25);
+				width: 90%;
+			}
+		}
+}
+
+.items {
+	display: flex;
+	justify-content: space-between;
+
+	@media (max-width:$mobile){
+		flex-wrap: wrap;
+		flex-direction: column;
+		align-items: center;
+	}
+
+		&__item {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: rem(10);
+
+			@media (max-width:$mobile){
+				row-gap: rem(10);
+				text-align: center;
+				&:not(:last-child) {margin-bottom: rem(25);}
+			}
+		}
+
+		&__image {
+			margin-bottom: rem(24);
+		}
+
+		&__title {
+			font-weight: 600;
+			font-size: rem(24);
+			margin-bottom: rem(10);
+		}
+
+		&__text {
+			max-width: rem(244);
+			line-height: math.div(24, 16);
+			text-align: center;
+			color: #B7AAA2;
+		}
+}
+
+//====================================================================================================
+
+.about {
+	@include adaptiveValue("padding-top", 120, 60);
+	@include adaptiveValue("padding-bottom", 120, 60);
+
+		&__container {
+		}
+
+		&__body {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		&__content {
+			flex: 1 1 auto;
+			text-align: center;
+			max-width: rem(580);
+		}
+
+		&__title {
+			margin-bottom: rem(12);
+		}
+
+		&__text {
+			margin-bottom: rem(60);
+		}
+
+		&__gallery {
+			margin-bottom: rem(60);
+		}
+
+		&__buttons {
+			display: flex;
+			@include adaptiveValue("column-gap", 30, 10);
+
+			@media (max-width: em(1205)){
+				flex-direction: column;
+				align-items: center;
+				@include adaptiveValue("row-gap", 30, 10);
+			}
+		}
+
+		&__button {
+			width: rem(432);
+			justify-content: center;
+			padding: rem(18.5) rem(51);
+
+			&_m {
+				width: rem(216);
+				background-color: inherit;
+				border: 1px solid #EFE7E2;
+				justify-content: center;
+				letter-spacing: 0.1em;
+				font-size: rem(14);
+				line-height: math.div(21, 14);
+				text-transform: uppercase;
+				padding: rem(22) 0;
+
+			@media (any-hover: hover) {
+					&:hover {
+						cursor: url('@img/cursor-m.png'), auto;
+					}
+				}
+
+				@media (max-width:$mobile){
+					font-size: rem(12);
+	}
+	
+			}
+
+			@media (max-width:$mobile){
+			padding: rem(10) rem(15);
+			width: 90%;
+		}
+		}
+
+}
+
+.gallery {
+	display: flex;
+	width: rem(1180);
+	justify-content: space-between;
+
+	@media (max-width: em(1205)){
+		flex-direction: column;
+		width: rem(580);
+		@include adaptiveValue("row-gap", 20, 10);
+
+		@media (max-width: em(610)){
+			@include adaptiveValue("width", 600, 310);
+		}
+	}
+
+		&__block {
+			display: flex;
+			flex-direction: column;
+			@include adaptiveValue("row-gap", 20, 10);
+		}
+
+		&__couple {
+			display: flex;
+			gap: rem(20);
+
+			img {
+				max-height: rem(280);
+			}
+
+			@media (max-width: em(610)){
+				flex-direction: column;
+				align-items: center;
+			}
+		}
+
+		img {
+			width: 100%;
+			height: auto;
+		}
+}
+
+//=========================================================================================================================
+
+.testimonials {
+	@include adaptiveValue("margin-bottom", 154, 54);
+
+		&__body {
+			position: relative;
+			@include adaptiveValue("padding-left", 130, 30);
+			@include adaptiveValue("padding-right", 130, 30);
+		}
+
+		&__upside {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-bottom: rem(60);
+		}
+
+		&__title {
+			margin-bottom: rem(24);
+		}
+
+		&__slide {
+			display: flex;
+			flex: 1 1 23.73%;
+			flex-direction: column;
+			margin-right: rem(20);
+		}
+
+		&__photo {
+			margin-bottom: rem(24);
+		}
+
+		&__name {
+			font-weight: 700;
+			font-size: rem(14);
+			color: #fff;
+			line-height: math.div(21, 14);
+			margin-bottom: rem(24);
+		}
+
+		&__description {
+			line-height: math.div(24, 16);
+			color: #fff;
+			margin-bottom: rem(24);
+		}
+
+		&__link {
+			font-size: rem(14);
+			line-height: math.div(19, 14);
+			color: $button;
+
+			@media (any-hover: hover){
+				&:hover{
+					text-decoration: underline;
+				}
+			}
+		}
+
+}
