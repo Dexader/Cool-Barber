@@ -15,18 +15,24 @@
 	}
 }
 
-._icon-geo:before {
+._icon-clock:before {
   content: "\e900";
 }
-._icon-mail:before {
+._icon-geo:before {
   content: "\e901";
 }
-._icon-more:before {
+._icon-icon:before {
   content: "\e902";
 }
-._icon-phone:before {
+._icon-mail:before {
   content: "\e903";
 }
-._icon-testimonials-arrow:before {
+._icon-more:before {
   content: "\e904";
+}
+._icon-phone:before {
+  content: "\e905";
+}
+._icon-testimonials-arrow:before {
+  content: "\e906";
 }

@@ -66,8 +66,11 @@
 			}
 
 			&::before{
-				color: $button;
-				@include adaptiveValue("font-size", 36, 20);
+				color: $thirdColor;
+				background-color: $button;
+				border-radius: 50%;
+				font-size: rem(18);
+				padding: rem(9);
 			}
 
 			@media (max-width:$tablet){
@@ -89,8 +92,11 @@
 			text-align: right;
 
 			&::before{
-				color: $button;
-				@include adaptiveValue("font-size", 36, 20);
+				color: $thirdColor;
+				background-color: $button;
+				border-radius: 50%;
+				font-size: rem(18);
+				padding: rem(9);
 
 				@media (max-width:$tablet){
 				display: none;

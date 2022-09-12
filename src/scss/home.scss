@@ -340,3 +340,220 @@
 		}
 
 }
+
+//=========================================================================================================================
+
+.prices {
+	@include adaptiveValue("padding-block", 120, 50);
+	background: linear-gradient(to bottom, #251D1A 75%, #3B322D 25%);
+
+		&__container {
+		}
+
+		&__body {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			@include adaptiveValue("padding-inline", 130, 30);
+		}
+
+		&__header {
+			text-align: center;
+		}
+
+		&__title {
+			margin-bottom: rem(24);
+		}
+
+		&__text {
+			margin-bottom: rem(62.38);
+		}
+
+		&__cards {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			@include adaptiveValue("gap", 20, 0);
+			@include adaptiveValue("margin-bottom", 100, 40);
+
+			@media (max-width: em(860)){
+				justify-content: center;
+			}
+		}
+
+		&__card {
+			width: min(100%, 280px);
+		}
+
+		&__booking {
+			background-color: $button;
+			width: min(100%, rem(1180));
+			@include adaptiveValue("padding-block", 70, 10);
+			@include adaptiveValue("padding-inline", 150, 10);
+			text-align: center;
+		}
+
+		&__content {
+			margin-bottom: rem(35);
+		}
+
+		&__offer {
+			font-family: Playfair Display;
+			font-weight: 900;
+			@include adaptiveValue("font-size", 36, 27);
+			line-height: math.div(48, 36);
+			color: #000;
+			&:not(:last-child) {margin-bottom: em(12, 36);}
+		}
+
+		&__expand {
+			font-size: rem(21);
+			line-height: math.div(30, 21);
+			color: #3B322D;
+		}
+
+		&__form {
+			display: grid;
+			grid-template-columns: 1fr 1fr percent(194, 880);
+			gap: rem(20);
+			margin-bottom: rem(24);
+
+			@media (max-width: em(1200)){
+			display: flex;
+			flex-wrap: wrap;
+		}
+		}
+}
+
+.card {
+	margin-bottom: rem(39);
+	width: 280px;
+
+		&__photo-ibg {
+			margin-bottom: rem(20);
+			height: 100%;
+		}
+
+		&__table {
+		}
+}
+.table {
+	display: flex;
+	flex-direction: column;
+
+		&__title {
+			text-align: left;
+			font-weight: 500;
+			font-size: rem(30);
+			line-height: math.div(40, 30);
+			margin-bottom: rem(20);
+		}
+
+		&__body {
+			border-right: 1px solid #B7AAA2;
+			padding-right: rem(14);
+		}
+
+		&__row {
+			display: flex;
+			justify-content: space-between;
+			align-items: end;
+		}
+
+		&__name {
+			line-height: math.div(28, 16);
+		}
+
+		&__cost {
+			font-size: rem(14);
+			line-height: math.div(24, 14);
+
+			span {
+				font-weight: 700;
+				color: #fff;
+				line-height: math.div(24, 16);
+			}
+		}
+
+}
+
+//=========================================================================================================================
+
+.contacts {
+	background: url('@img/map2.webp') center / cover no-repeat;
+	@include adaptiveValue("padding-block", 60, 30);
+
+	@media (max-width:$tablet){
+		height: 560px;
+	}
+
+		&__container {
+		}
+
+		&__body {
+			background-color: $secondColor;
+			border-radius: 5px;
+			padding-left: rem(57);
+			padding-block: rem(65);
+			padding-right: rem(20);
+			width: percent(480, 1440);
+			height: auto;
+			@include adaptiveValue("margin-left", 130, 30);
+
+			@media (max-width:$tablet){
+				width: 100%;
+				padding-block: rem(15);
+				padding-inline: rem(15);
+				margin: 0;
+			}
+
+			span {
+				@media (max-width:$tablet){
+					display: none;
+				}
+			}
+		}
+
+		&__title {
+			&:not(:last-child) {margin-bottom: em(34, 48);}
+		}
+
+		&__list {
+			margin-bottom: rem(15);
+
+			@media (max-width:$tablet){
+				display: flex;
+				align-items: center;
+				@include adaptiveValue("gap", 31, 15);
+			}
+
+			li {
+				&:not(:last-child) {margin-bottom: em(36.5, 21);}
+
+				@media (max-width:$tablet){
+					&:not(:last-child) {margin-bottom: em(0, 21);}
+				}
+			}
+		}
+
+		&__item {
+			display: flex;
+			align-items: center;
+			font-family: Montserrat;
+			@include adaptiveValue("font-size", 21, 14);
+			line-height: math.div(30, 21);
+			color: #fff;
+			@include adaptiveValue("gap", 31, 15);
+			
+			&::before{
+				color: $secondColor;
+				background-color: $button;
+				border-radius: 50%;
+				padding: rem(16.5);
+			}
+
+			@media (max-width:$tablet){
+				&:not(:last-child) {margin-bottom: em(0, 21);}
+			}
+		}
+}

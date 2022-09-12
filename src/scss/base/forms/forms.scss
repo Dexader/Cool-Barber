@@ -4,15 +4,80 @@
 	&__row {
 	}
 	&__column {
+		position: relative;
+		z-index: 100;
+
+		@media (max-width: em(1200)){
+		flex: 1 1 auto;;
+	}
 	}
 	&__line {
 	}
+
+	&:invalid [type="submit"] {
+		cursor: not-allowed;
+	}
+
+	&:invalid [type="submit"]:active {
+		pointer-events: none;
+	}
+
+	&__error {
+		color: red;
+		text-align: left;
+		margin-top: rem(3);
+		display: none;
+	}
+
 	&__input {
+		width: 100%;
+		padding-block: rem(23) rem(22);
+		padding-inline: rem(20);
+		outline: none;
+		font-size: rem(17);
+		line-height: math.div(23, 17);
+		
+		&:focus {
+			border: 1px solid #000;
+		}
+
+		&:not(:placeholder-shown):not(:focus):valid {
+			border: 1px solid #4FE18A;
+		}
+
+		&:not(:placeholder-shown):not(:focus):invalid {
+			border: 1px solid red;
+		}
+
+		&:not(:placeholder-shown):not(:focus):invalid + .error__message,
+		&:not(:placeholder-shown):not(:focus):valid + .error__message + .success__message {
+			display: block;
+		}
+
 	}
 	&__button {
+		background-color: #000;
+		font-family: Playfair Display;
+		font-weight: 700;
+		font-size: rem(20);
+		color: #fff;
+		width: 100%;
+		height: auto;
+		display: block;
+
+		@media (any-hover: hover) {
+		&:hover {
+			cursor: url('@img/cursor-m.png'), auto;
+		}
 	}
-	&__error {
+
+	@media (max-width: em(1200)){
+		flex: 1 1 auto;
+		padding-block: rem(18.5);
 	}
+
+	}
+	
 }
 //</FORM>
 
@@ -22,11 +87,11 @@
 
 // <INPUTS>
 // Снипет (HTML): inp
-// @import "input";
+@import "input";
 
 // <CHECK>
 // Снипет (HTML): chk
-// @import "checkbox";
+@import "checkbox";
 
 // <RADIO>
 // Снипет (HTML): opt
